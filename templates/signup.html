@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+    
+    {% if menu == 'display' %}
+
+        {% if user != '' %}
+            <p>You're already signed up!</p>
+            
+        {% else %}
+            
+            <!-- insert the page content here -->
+            <h1>Sign Up</h1>
+            <form method="post" action="/signup">
+                <p>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" size="40" /></p>
+                <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="pw" size="40" /></p>
+                <p>
+                <label for="password">Confirm:</label>
+                <input type="password" id="confirm-password" name="conf-pw" size="40" /></p>
+                <p>
+                <label for="username">Zipcode:</label>
+                <input type="text" id="zipcode" name="zip" size="40" /></p>
+            
+                <p><input type="submit" value="signup" name="submit" /></p>
+            </form>
+        {% endif %}
+    {% elif menu == 'success' %}
+        <p>You signed up successfully!</p>
+    {% elif menu == 'failure' %}
+        <p>Sign up failed!</p>
+    {% endif %}
+        
+        
+ 
+        
+{% endblock %}
