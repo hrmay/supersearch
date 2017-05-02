@@ -1,1 +1,2 @@
 static/css/*.css linguist-vendored
+templates/*.html linguist-vendored
